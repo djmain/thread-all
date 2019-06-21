@@ -7,26 +7,40 @@ import java.util.concurrent.TimeUnit;
  */
 public class ThreadLocalTest01
 {
-    private static ThreadLocal<Long> threadLocal = new ThreadLocal();
+    private static ThreadLocal<Long> threadLocal = new ThreadLocal()
+    {
+
+        @Override
+        protected Object initialValue()
+        {
+            return System.currentTimeMillis();
+        }
+    };
 
     public static Long get()
     {
-        if (null == value)
-        {
-            value = Thread.currentThread().getName();
-            System.out.println("initialValue:" + value);
-            threadLocal.set(value);
-        }
-        return value;
+        return threadLocal.get();
     }
 
-    public static void set(String value)
+    public static void set(Long value)
     {
         threadLocal.set(value);
     }
 
     public static void remove()
     {
+        threadLocal.remove();
+    }
+
+    public static void begin()
+    {
+        threadLocal.get();
+    }
+
+    public static void end()
+    {
+        Long begin = threadLocal.get();
+        System.out.println("cost:" + (System.currentTimeMillis() - begin));
         threadLocal.remove();
     }
 

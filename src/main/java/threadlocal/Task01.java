@@ -11,7 +11,7 @@ public class Task01 implements Runnable
         for (int i = 0; i < 10; i++)
         {
             System.out.println(Thread.currentThread().getName() + " get value:" + ThreadLocalTest01.get());
-            ThreadLocalTest01.set(ThreadLocalTest01.get() + String.valueOf(i));
+//            ThreadLocalTest01.set(ThreadLocalTest01.get() + String.valueOf(i));
         }
         ThreadLocalTest01.remove();
     }
