@@ -1,6 +1,4 @@
-package threadlocal;
-
-import java.util.concurrent.TimeUnit;
+package com.jay.thread;
 
 /**
  * created by Jay on 2019/6/20

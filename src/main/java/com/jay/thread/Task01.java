@@ -1,4 +1,4 @@
-package threadlocal;
+package com.jay.thread;
 
 /**
  * created by Jay on 2019/6/20

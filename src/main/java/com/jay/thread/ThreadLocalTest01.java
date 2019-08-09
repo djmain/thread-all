@@ -1,4 +1,4 @@
-package threadlocal;
+package com.jay.thread;
 
 import java.util.concurrent.TimeUnit;
 
